@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Carosello con Vue</title> 
+    </head>
+    <body>
+        <div id ="root">
+            <div class="container">
+                <div class="slider-wrapper">
+                    <div class="prev" @click="prevImg">
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                    <div class="images">
+                        <div class="active" v-bind:src="images[counter]">
+                    </div>
+                    <div class="next" @click="nextImg">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                    <div class="nav">
+                        <i @click="" v-bind:class="(index === counter) ? 'active' : '' "class="fas fa-circle" v-for="(img, index) in images"></i>
+                        <!-- ? è uguale a se, mentre : sta per altrimenti. Questo è l'operatore ternario-->
+                        <!-- se il valore index === è true, allora inserisci la classe active, altrimenti non inserire nessuna classe-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- development version, includes helpful console warnings -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
